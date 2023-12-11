@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+{% block title  %}Gallery{% endblock %}
+
+{%block background%}{%load static%}{%endblock%}
+{%block headers%}
+<h1>Galleria de fotos de usuarios</h1>
+{%endblock%}
+{%block content%}
+{%for project in projects%}
+<div class="container">
+    <div class="row">   
+      <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{{project.image.url}}" alt="avatar">
+      </div>
+      <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading">{{project.title}}</h2>   
+        <p>{{project.description}}</p>
+        <br>
+        <h3>{{project.Planet}}</h3>
+      </div>
+    </div>  
+  </div>
+{% endfor %}
+{% endblock  %}
+
